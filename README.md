@@ -38,7 +38,13 @@ Esta é uma aplicação web desenvolvida em **React** que permite calcular a res
   - Motivo da dispensa  
   - Aviso prévio  
   - Férias vencidas  
-- Armazenamento e recuperação de dados usando MySQL.  
+- Cálculo Salário Líquido **Em Desenvolvimento**
+- Cálculo Saldo FGTS **Em Desenvolvimento**
+- Cálculo IRRF **Em Desenvolvimento**
+- Cálculo Decimo Terceiro **Em Desenvolvimento**
+- Cálculo Férias **Em Desenvolvimento**
+- Cálculo Horas Extras **Em Desenvolvimento**
+- Armazenamento e recuperação de dados usando MySQL.
 
 ## Tecnologias Utilizadas  
 
@@ -46,10 +52,9 @@ Esta é uma aplicação web desenvolvida em **React** que permite calcular a res
 - **Backend**: Node.js e Express  
 - **Banco de Dados**: MySQL  
 
-## Como Usar  
 
 ### Pré-requisitos  
 
-Certifique-se de ter o Node.js e o MySQL instalados em sua máquina.  
+Certifique-se de ter o Node.js e o MySQL instalados em sua máquina.
 
-### Passos para Configuração
+## Como Usar  

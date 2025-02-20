@@ -4,7 +4,29 @@ Esta é uma aplicação web desenvolvida em **React** que permite calcular a res
 
 ## Tela da Aplicação  
 
-![Calculadora de Rescisão Trabalhista](../Site-Rescisao-Trabalhista/frontend/inicio.png)  
+### Home
+![Tela Inicial](./frontend/src/assets/home.png)
+
+### Tela Calculo Rescisão
+![Rescisão](./frontend/src/assets/telaRescisao.png)
+
+### Tela Calculo Salário Líquido
+![Salário Líquido](./frontend/src/assets/telaSalarioLiquido.png) 
+
+### Tela Calculo Saldo FGTS
+![Saldo FGTS](./frontend/src/assets/telaSaldoFGTS.png)
+
+### Tela Calculo IRRF
+![Saldo FGTS](./frontend/src/assets/telaCalculoIRRF.png)
+
+### Tela Calculo Decimo Terceiro
+![Decimo Terceiro](./frontend/src/assets/telaDecimoTerceiro.png)
+
+### Tela Calculo Férias
+![Salário Líquido](./frontend/src/assets/telaCalculoFerias.png)
+
+### Tela Calculo Hora Extra
+![Salário Líquido](./frontend/src/assets/telaHoraExtra.png)
 
 ## Funcionalidades  
 

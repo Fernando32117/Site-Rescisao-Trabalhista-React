@@ -1,35 +1,37 @@
 import "./App.css";
 import React, { useState } from "react";
-import CalculoRescisao from "./CalculoRescisao";
-import CalculoSalarioLiquido from "./CalculoSalarioLiquido";
-import CalculoSaldoFGTS from "./CalculoSaldoFGTS";
-import CalculoIRRF from "./CalculoIRRF";
-import CalculoDecimoTerceiro from "./CalculoDecimoTerceiro";
-import CalculoFerias from "./CalculoFerias";
-import CalculoHorasExtras from "./CalculoHorasExtras";
+import Home from "./components/Home";
+import CalculoRescisao from "./components/CalculoRescisao";
+import CalculoSalarioLiquido from "./components/CalculoSalarioLiquido";
+import CalculoSaldoFGTS from "./components/CalculoSaldoFGTS";
+import CalculoIRRF from "./components/CalculoIRRF";
+import CalculoDecimoTerceiro from "./components/CalculoDecimoTerceiro";
+import CalculoFerias from "./components/CalculoFerias";
+import CalculoHorasExtras from "./components/CalculoHorasExtras";
 
 function App() {
-  const [activeMenu, setActiveMenu] = useState('rescisao');
+  const [activeMenu, setActiveMenu] = useState("home");
 
-  // Função para renderizar o componente correto com base no menu ativo
   const renderContent = () => {
     switch (activeMenu) {
-      case 'rescisao':
+      case "home":
+        return <Home setActiveMenu={setActiveMenu} />;
+      case "rescisao":
         return <CalculoRescisao />;
-      case 'salarioLiquido':
+      case "salarioLiquido":
         return <CalculoSalarioLiquido />;
-      case 'saldoFGTS':
+      case "saldoFGTS":
         return <CalculoSaldoFGTS />;
-      case 'irrf':
+      case "irrf":
         return <CalculoIRRF />;
-      case 'decimoTerceiro':
+      case "decimoTerceiro":
         return <CalculoDecimoTerceiro />;
-      case 'ferias':
+      case "ferias":
         return <CalculoFerias />;
-      case 'horasExtras':
+      case "horasExtras":
         return <CalculoHorasExtras />;
       default:
-        return <CalculoRescisao />;
+        return <Home setActiveMenu={setActiveMenu} />;
     }
   };
 

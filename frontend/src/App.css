@@ -9,21 +9,50 @@
 body {
   background: linear-gradient(135deg, #f3e7e9, #e3eeff);
   font-family: "Poppins", sans-serif;
-  padding: 0 10px; /* Adiciona algum espaçamento nas laterais */
+  padding: 0 10px;
 }
 
 
 /* Estilo do container principal */
 .App {
-  max-width: 600px; /* Aumentando um pouco a largura para melhor visualização */
+  max-width: 600px;
   margin: 40px auto;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Aumentando a profundidade da sombra */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   border: 1px solid #e0e0e0;
   position: relative; /* Para que elementos como o botão flutuante possam ser posicionados em relação a este container */
+}
+
+.menu {
+  background: #6a0dad;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 10px auto;
+  gap: 15px;
+}
+
+.menu li {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: background 0.2s ease-in-outline;
+}
+
+.menu li:hover {
+  background: #4b0082;
+  border-radius: 5px;
+  border-bottom: 3px solid white;
 }
 
 
@@ -48,12 +77,12 @@ label {
   text-align: left;
   color: #444;
   align-items: center;
-  gap: 8px; /* Espaço entre o checkbox e o texto */
+  gap: 8px;
 }
 
 input[type="checkbox"] {
-  margin: 10px auto; /* Remove margens indesejadas */
-  width: 25px; /* Tamanho do checkbox */
+  margin: 10px auto;
+  width: 25px;
   height: 16px;
   cursor: pointer;
   accent-color: #6a0dad;
@@ -95,7 +124,7 @@ button {
   background: linear-gradient(135deg, #8e44ad, #6a0dad);
   color: white;
   border: none;
-  padding: 15px; /* Aumentando o padding para um visual mais chamativo */
+  padding: 15px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -133,16 +162,16 @@ button:hover {
 
 .resultado {
   margin-top: 20px;
-  padding: 20px; /* Aumentando o padding para mais espaçamento interno */
-  background: #f1c40f; /* Usando uma cor mais vibrante para chamar a atenção */
+  padding: 20px;
+  background: #f1c40f;
   border-left: 5px solid #e67e22;
   border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adicionando uma sombra leve */
-  color: #2c3e50; /* Cor do texto */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
 }
 
 .resultado h2, .resultado p {
-  margin-bottom: 10px; /* Espaço entre os elementos do resultado */
+  margin-bottom: 10px;
 }
 
 

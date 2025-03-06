@@ -39,32 +39,32 @@ A aplicação possui as seguintes funcionalidades:
 
 ### **Home**
 A tela inicial contém um menu de navegação para acessar cada funcionalidade. À baixo, há uma **seção informativa interativa**, com descrições detalhadas de cada cálculo.
-![Home](./frontend/src/assets/home.png)
+![Home](./src//assets/home.png)
 
 ### Telas de Cálculo
 - **Rescisão:**
-  ![Tela Cálculo Rescisão](./frontend/src/assets/telaRescisao.png)
+  ![Tela Cálculo Rescisão](./src//assets/telaRescisao.png)
 
 - **Resultado Rescisão:**
-  ![Tela Resultado Cálculo Rescisão](./frontend/src/assets/result.png)
+  ![Tela Resultado Cálculo Rescisão](./src//assets/telaRescisao.png)
 
 - **Salário Líquido:**
-  ![Tela Salário Líquido](./frontend/src/assets/telaSalarioLiquido.png)
+  ![Tela Salário Líquido](./src//assets/telaSalarioLiquido.png)
 
 - **Saldo FGTS:**
-  ![Tela Saldo FGTS](./frontend/src/assets/telaSaldoFGTS.png)
+  ![Tela Saldo FGTS](./src//assets/telaSaldoFGTS.png)
 
 - **IRRF:**
-  ![Tela IRRF](./frontend/src/assets/telaCalculoIRRF.png)
+  ![Tela IRRF](./src//assets/telaCalculoIRRF.png)
 
 - **Décimo Terceiro:**
-  ![Tela Décimo Terceiro](./frontend/src/assets/telaDecimoTerceiro.png)
+  ![Tela Décimo Terceiro](./src//assets/telaDecimoTerceiro.png)
 
 - **Férias:**
-  ![Tela Férias](./frontend/src/assets/telaCalculoFerias.png)
+  ![Tela Férias](./src//assets/telaCalculoFerias.png)
 
 - **Horas Extras:**
-  ![Tela Horas Extras](./frontend/src/assets/telaHoraExtra.png)
+  ![Tela Horas Extras](./src//assets/telaHoraExtra.png)
 
   ## 🚀 Tecnologias Utilizadas  
 

@@ -12,6 +12,10 @@ body {
   padding: 0 10px;
 }
 
+h1{
+  margin: 15px;
+}
+
 
 /* Estilo do container principal */
 .App {
@@ -26,8 +30,8 @@ body {
   position: relative;
 }
 
-.main-content{
-  margin: 2rem;
+.main-content h1{
+  margin-bottom: 20px;
 }
 
 
@@ -333,13 +337,18 @@ button:hover {
   .App {
     max-width: 100%;
     padding: 15px;
-    margin: 20px;
+    margin: 10px;
   }
 
   
   .info-section {
-    margin: 20px 0;
+    margin: 15px auto;
     position: relative; /* Para se ajustar ao fluxo natural no celular */
+  }
+
+  .main-content{
+    margin: -20px;
+    padding: 5px;
   }
   
   .resultado {

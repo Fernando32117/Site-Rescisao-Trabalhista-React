@@ -18,7 +18,7 @@ function Home({ setActiveMenu }) {
       </div>
 
       <div className="info-section">
-  <h2>Informações sobre os Cálculos usados</h2>
+  <h2>Informações sobre os cálculos usados</h2>
   <ul className="accordion">
     <li className="accordion-item">
       <div

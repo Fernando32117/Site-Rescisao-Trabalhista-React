@@ -1,4 +1,3 @@
-// CalculoIRRF.js
 import React, { useState } from 'react';
 
 function CalculoIRRF() {
@@ -7,28 +6,20 @@ function CalculoIRRF() {
   const [resultado, setResultado] = useState(null);
 
   const calcularIRRF = async () => {
-    const body = {
-      salarioBruto: parseFloat(salarioBruto),
-      dependentes: parseInt(dependentes)
-    };
-
-    try {
-      const response = await fetch('http://localhost:3001/api/calculoIRRF', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erro na requisição');
-      }
-
-      const data = await response.json();
-      setResultado(data);
-    } catch (error) {
-      console.error('Erro ao calcular:', error);
-      setResultado({ error: 'Erro ao calcular!' });
+    const baseCalculo = salarioBruto - (dependentes * 189.59);
+    let irrf = 0;
+    if (baseCalculo <= 1903.98) {
+      irrf = 0;
+    } else if (baseCalculo <= 2826.65) {
+      irrf = baseCalculo * 0.075 - 142.80;
+    } else if (baseCalculo <= 3751.05) {
+      irrf = baseCalculo * 0.15 - 354.80;
+    } else if (baseCalculo <= 4664.68) {
+      irrf = baseCalculo * 0.225 - 636.13;
+    } else {
+      irrf = baseCalculo * 0.275 - 869.36;
     }
+    setResultado({ irrf });
   };
 
   return (
@@ -51,7 +42,7 @@ function CalculoIRRF() {
       {resultado && !resultado.error && (
         <div className="resultado">
           <h2>IRRF:</h2>
-          <p>R$ {resultado.irrf}</p>
+          <p>R$ {resultado.irrf.toFixed(2)}</p>
         </div>
       )}
 

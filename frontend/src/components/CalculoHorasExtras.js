@@ -9,30 +9,11 @@ function CalculoHorasExtras() {
   const [resultado, setResultado] = useState(null);
 
   const calcularHorasExtras = async () => {
-    const body = {
-      salarioBruto: parseFloat(salarioBruto),
-      horasPorSemana: parseInt(horasPorSemana),
-      adicionalHoraExtra: parseFloat(adicionalHoraExtra),
-      quantidadeHorasExtras: parseFloat(quantidadeHorasExtras)
-    };
+    const salarioHora = salarioBruto / (horasPorSemana * 4.5); // Considerando um mês de 4.5 semanas
+    const valorHoraExtra = salarioHora + (salarioHora * adicionalHoraExtra / 100);
+    const valorHorasExtras = valorHoraExtra * quantidadeHorasExtras;
 
-    try {
-      const response = await fetch('http://localhost:3001/api/calculoHorasExtras', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erro na requisição');
-      }
-
-      const data = await response.json();
-      setResultado(data);
-    } catch (error) {
-      console.error('Erro ao calcular:', error);
-      setResultado({ error: 'Erro ao calcular!' });
-    }
+    setResultado({ valorHorasExtras });
   };
 
   return (
@@ -65,7 +46,7 @@ function CalculoHorasExtras() {
       {resultado && !resultado.error && (
         <div className="resultado">
           <h2>Horas Extras:</h2>
-          <p>R$ {resultado.horasExtras}</p>
+          <p>R$ {resultado.valorHorasExtras.toFixed(2)}</p>
         </div>
       )}
 

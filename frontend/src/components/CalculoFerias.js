@@ -1,4 +1,3 @@
-// CalculoFerias.js
 import React, { useState } from 'react';
 
 function CalculoFerias() {
@@ -8,29 +7,11 @@ function CalculoFerias() {
   const [resultado, setResultado] = useState(null);
 
   const calcularFerias = async () => {
-    const body = {
-      salarioBruto: parseFloat(salarioBruto),
-      dependentes: parseInt(dependentes),
-      diasFerias: parseInt(diasFerias)
-    };
+    const feriasBase = (salarioBruto / 30) * diasFerias;
+    const tercoConstitucional = feriasBase / 3;
+    const salarioFerias = feriasBase + tercoConstitucional;
 
-    try {
-      const response = await fetch('http://localhost:3001/api/calculoFerias', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erro na requisição');
-      }
-
-      const data = await response.json();
-      setResultado(data);
-    } catch (error) {
-      console.error('Erro ao calcular:', error);
-      setResultado({ error: 'Erro ao calcular!' });
-    }
+    setResultado({ salarioFerias });
   };
 
   return (
@@ -58,7 +39,7 @@ function CalculoFerias() {
       {resultado && !resultado.error && (
         <div className="resultado">
           <h2>Férias:</h2>
-          <p>R$ {resultado.ferias}</p>
+          <p>R$ {resultado.salarioFerias.toFixed(2)}</p>
         </div>
       )}
 

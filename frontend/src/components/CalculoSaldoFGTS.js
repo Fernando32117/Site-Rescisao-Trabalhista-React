@@ -1,4 +1,3 @@
-// CalculoSaldoFGTS.js
 import React, { useState } from 'react';
 
 function CalculoSaldoFGTS() {
@@ -7,28 +6,9 @@ function CalculoSaldoFGTS() {
   const [resultado, setResultado] = useState(null);
 
   const calcularSaldoFGTS = async () => {
-    const body = {
-      salarioBruto: parseFloat(salarioBruto),
-      meses: parseInt(meses)
-    };
-
-    try {
-      const response = await fetch('http://localhost:3001/api/calculoSaldoFGTS', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erro na requisição');
-      }
-
-      const data = await response.json();
-      setResultado(data);
-    } catch (error) {
-      console.error('Erro ao calcular:', error);
-      setResultado({ error: 'Erro ao calcular!' });
-    }
+    const fgtsMensal = salarioBruto * 0.08;
+    const saldoFGTS = fgtsMensal * meses;
+    setResultado({ saldoFGTS });
   };
 
   return (
@@ -51,7 +31,7 @@ function CalculoSaldoFGTS() {
       {resultado && !resultado.error && (
         <div className="resultado">
           <h2>Saldo FGTS:</h2>
-          <p>R$ {resultado.saldoFGTS}</p>
+          <p>R$ {resultado.saldoFGTS.toFixed(2)}</p>
         </div>
       )}
 

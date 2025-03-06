@@ -1,4 +1,3 @@
-// SalarioLiquido.js
 import React, { useState } from 'react';
 
 function CalculoSalarioLiquido() {
@@ -9,30 +8,12 @@ function CalculoSalarioLiquido() {
   const [resultado, setResultado] = useState(null);
 
   const calcularSalarioLiquido = async () => {
-    const body = {
-      salarioBruto: parseFloat(salarioBruto),
-      dependentes: parseInt(dependentes),
-      outrosDescontos: parseFloat(outrosDescontos),
-      mesAno
-    };
+    const inss = salarioBruto * 0.08; // Supondo 8% de INSS
+    const irrf = salarioBruto * 0.075; // Supondo 7.5% de IRRF (ajuste conforme a tabela real)
+    const descontosDependentes = dependentes * 189.59; // Desconto padrão por dependente
+    const salarioLiquido = salarioBruto - inss - irrf - descontosDependentes - parseFloat(outrosDescontos);
 
-    try {
-      const response = await fetch('http://localhost:3001/api/calculoSalarioLiquido', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erro na requisição');
-      }
-
-      const data = await response.json();
-      setResultado(data);
-    } catch (error) {
-      console.error('Erro ao calcular:', error);
-      setResultado({ error: 'Erro ao calcular!' });
-    }
+    setResultado({ salarioLiquido });
   };
 
   return (
@@ -65,7 +46,7 @@ function CalculoSalarioLiquido() {
       {resultado && !resultado.error && (
         <div className="resultado">
           <h2>Salário Líquido:</h2>
-          <p>R$ {resultado.salarioLiquido}</p>
+          <p>R$ {resultado.salarioLiquido.toFixed(2)}</p>
         </div>
       )}
 

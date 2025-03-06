@@ -1,63 +1,96 @@
-# Calculadora de Rescisão Trabalhista  
+# Calculadora de Cálculos Trabalhistas
 
-Esta é uma aplicação web desenvolvida em **React** que permite calcular a rescisão de um contrato de trabalho. O aplicativo se conecta a um banco de dados **MySQL** para armazenar e recuperar informações.  
+Esta é uma aplicação web desenvolvida em **React** para realizar cálculos relacionados a rescisões trabalhistas e outros direitos trabalhistas, utilizando **fórmulas matemáticas**. Este aplicativo é ideal para simular e facilitar o entendimento de cálculos trabalhistas no Brasil.
 
-## Tela da Aplicação  
+---
 
-### Home
-![Tela Inicial](./frontend/src/assets/home.png)
+## 📋 Funcionalidades  
 
-### Tela Cálculo Rescisão
-![Rescisão](./frontend/src/assets/telaRescisao.png)
+A aplicação possui as seguintes funcionalidades:
 
-### Tela Resultado Cálculo Rescisão
-![Rescisão](./frontend/src/assets/result.png)
+1. **Cálculo de Rescisão:**
+   - Aviso Prévio.
+   - Férias Proporcionais e 1/3 Constitucional.
+   - Décimo Terceiro Proporcional.
+   - Multa do FGTS.
+   - Total a Receber.
 
-### Tela Cálculo Salário Líquido
-![Salário Líquido](./frontend/src/assets/telaSalarioLiquido.png) 
+2. **Cálculo de Salário Líquido:**
+   - Baseado no Salário Bruto, INSS, IRRF e outros descontos.
 
-### Tela Cálculo Saldo FGTS
-![Saldo FGTS](./frontend/src/assets/telaSaldoFGTS.png)
+3. **Cálculo de Saldo FGTS:**
+   - Valor acumulado do FGTS mensal multiplicado pelos meses trabalhados.
 
-### Tela Cálculo IRRF
-![Saldo FGTS](./frontend/src/assets/telaCalculoIRRF.png)
+4. **Cálculo de IRRF:**
+   - Baseado na tabela progressiva de alíquotas de IRRF.
 
-### Tela Cálculo Décimo Terceiro
-![Decimo Terceiro](./frontend/src/assets/telaDecimoTerceiro.png)
+5. **Cálculo de Décimo Terceiro:**
+   - Base proporcional ao salário e meses trabalhados.
 
-### Tela Cálculo Férias
-![Salário Líquido](./frontend/src/assets/telaCalculoFerias.png)
+6. **Cálculo de Férias:**
+   - Valor proporcional aos dias de férias e adicional de 1/3 Constitucional.
 
-### Tela Cálculo Hora Extra
-![Salário Líquido](./frontend/src/assets/telaHoraExtra.png)
+7. **Cálculo de Horas Extras:**
+   - Com base no salário bruto, adicional de hora extra (%) e quantidade de horas.
 
-## Funcionalidades  
+---
 
-- Cálculo da rescisão trabalhista com base nas informações fornecidas pelo usuário.  
-- Formulário para entradas como:  
-  - Salário Bruto  
-  - Data de Contratação  
-  - Data de Demissão  
-  - Motivo da dispensa  
-  - Aviso prévio  
-  - Férias vencidas  
-- Cálculo Salário Líquido **Em Desenvolvimento**
-- Cálculo Saldo FGTS **Em Desenvolvimento**
-- Cálculo IRRF **Em Desenvolvimento**
-- Cálculo Decimo Terceiro **Em Desenvolvimento**
-- Cálculo Férias **Em Desenvolvimento**
-- Cálculo Horas Extras **Em Desenvolvimento**
-- Armazenamento e recuperação de dados usando MySQL.
+## 🖥️ Interface da Aplicação  
 
-## Tecnologias Utilizadas  
+### **Home**
+A tela inicial contém um menu de navegação para acessar cada funcionalidade. À baixo, há uma **seção informativa interativa**, com descrições detalhadas de cada cálculo.
+![Home](./frontend/src/assets/home.png)
 
-- **Frontend**: React  
-- **Backend**: Node.js e Express  
-- **Banco de Dados**: MySQL  
+### Telas de Cálculo
+- **Rescisão:**
+  ![Tela Cálculo Rescisão](./frontend/src/assets/telaRescisao.png)
 
+- **Resultado Rescisão:**
+  ![Tela Resultado Cálculo Rescisão](./frontend/src/assets/result.png)
 
-### Pré-requisitos  
+- **Salário Líquido:**
+  ![Tela Salário Líquido](./frontend/src/assets/telaSalarioLiquido.png)
 
-Certifique-se de ter o Node.js e o MySQL instalados em sua máquina.
+- **Saldo FGTS:**
+  ![Tela Saldo FGTS](./frontend/src/assets/telaSaldoFGTS.png)
 
-## Como Usar  
+- **IRRF:**
+  ![Tela IRRF](./frontend/src/assets/telaCalculoIRRF.png)
+
+- **Décimo Terceiro:**
+  ![Tela Décimo Terceiro](./frontend/src/assets/telaDecimoTerceiro.png)
+
+- **Férias:**
+  ![Tela Férias](./frontend/src/assets/telaCalculoFerias.png)
+
+- **Horas Extras:**
+  ![Tela Horas Extras](./frontend/src/assets/telaHoraExtra.png)
+
+  ## 🚀 Tecnologias Utilizadas  
+
+- **Frontend:** React  
+- **Linguagem de Estilo:** CSS  
+
+---
+
+## 🛠️ Como Usar  
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/Fernando32117/Site-Rescisao-Trabalhista-React.git
+   ```
+
+2. Acesse o diretório do projeto:
+    ```bash
+   cd Site-Rescisao-Trabalhista-React
+   ```
+
+3. Instale as Dependências:
+    ```bash
+   npm install
+   ```
+
+4. Execute a Aplicação:
+    ```bash
+   npm start
+   ```

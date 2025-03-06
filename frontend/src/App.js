@@ -11,6 +11,7 @@ import CalculoHorasExtras from "./components/CalculoHorasExtras";
 
 function App() {
   const [activeMenu, setActiveMenu] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para o menu responsivo
 
   const renderContent = () => {
     switch (activeMenu) {
@@ -38,18 +39,44 @@ function App() {
   return (
     <div className="App">
       <nav className="menu">
-        <ul>
-          <li onClick={() => setActiveMenu('rescisao')}>Rescisão</li>
-          <li onClick={() => setActiveMenu('salarioLiquido')}>Salário Líquido</li>
-          <li onClick={() => setActiveMenu('saldoFGTS')}>Saldo FGTS</li>
-          <li onClick={() => setActiveMenu('irrf')}>IRRF</li>
-          <li onClick={() => setActiveMenu('decimoTerceiro')}>13º Salário</li>
-          <li onClick={() => setActiveMenu('ferias')}>Férias</li>
-          <li onClick={() => setActiveMenu('horasExtras')}>Horas Extras</li>
+        {/* Botão de Hambúrguer para Telas Pequenas */}
+        <div
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)} // Alterna o estado do menu
+        >
+          Menu ☰
+        </div>
+
+        {/* Menu de Opções */}
+        <ul className={menuOpen ? "show" : ""}>
+          <li onClick={() => { setActiveMenu("home"); setMenuOpen(false); }}>
+            Início
+          </li>
+          <li onClick={() => { setActiveMenu("rescisao"); setMenuOpen(false); }}>
+            Rescisão Contratual
+          </li>
+          <li onClick={() => { setActiveMenu("salarioLiquido"); setMenuOpen(false); }}>
+            Salário Líquido
+          </li>
+          <li onClick={() => { setActiveMenu("saldoFGTS"); setMenuOpen(false); }}>
+            Saldo FGTS
+          </li>
+          <li onClick={() => { setActiveMenu("irrf"); setMenuOpen(false); }}>
+            Imposto de Renda
+          </li>
+          <li onClick={() => { setActiveMenu("decimoTerceiro"); setMenuOpen(false); }}>
+            Décimo Terceiro
+          </li>
+          <li onClick={() => { setActiveMenu("ferias"); setMenuOpen(false); }}>
+            Férias
+          </li>
+          <li onClick={() => { setActiveMenu("horasExtras"); setMenuOpen(false); }}>
+            Horas Extras
+          </li>
         </ul>
       </nav>
 
-      {renderContent()}
+      <div className="content-container">{renderContent()}</div>
 
       <footer className="footer">
         <p>&copy; {new Date().getFullYear()} Todos os direitos reservados.</p>

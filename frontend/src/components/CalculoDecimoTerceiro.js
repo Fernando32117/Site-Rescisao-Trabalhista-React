@@ -7,29 +7,8 @@ function CalculoDecimoTerceiro() {
   const [resultado, setResultado] = useState(null);
 
   const calcularDecimoTerceiro = async () => {
-    const body = {
-      salarioBruto: parseFloat(salarioBruto),
-      dependentes: parseInt(dependentes),
-      mesesTrabalhados: parseInt(mesesTrabalhados)
-    };
-
-    try {
-      const response = await fetch('http://localhost:3001/api/calculoDecimoTerceiro', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erro na requisição');
-      }
-
-      const data = await response.json();
-      setResultado(data);
-    } catch (error) {
-      console.error('Erro ao calcular:', error);
-      setResultado({ error: 'Erro ao calcular!' });
-    }
+    const decimoTerceiro = (salarioBruto / 12) * mesesTrabalhados;
+    setResultado({ decimoTerceiro });
   };
 
   return (
@@ -57,7 +36,7 @@ function CalculoDecimoTerceiro() {
       {resultado && !resultado.error && (
         <div className="resultado">
           <h2>Décimo Terceiro:</h2>
-          <p>R$ {resultado.decimoTerceiro}</p>
+          <p>R$ {resultado.decimoTerceiro.toFixed(2)}</p>
         </div>
       )}
 

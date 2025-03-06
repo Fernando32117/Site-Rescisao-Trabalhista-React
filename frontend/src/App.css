@@ -15,15 +15,91 @@ body {
 
 /* Estilo do container principal */
 .App {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 30px;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   border: 1px solid #e0e0e0;
-  position: relative; /* Para que elementos como o botão flutuante possam ser posicionados em relação a este container */
+  position: relative;
+}
+
+.main-content{
+  margin: 2rem;
+}
+
+
+.info-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Permite que ela fique fixa ao rolar a página */
+  top: 20px;
+}
+
+.info-section h2 {
+  margin-bottom: 15px;
+  color: #6a0dad;
+}
+
+.info-section .accordion {
+  list-style: none;
+  padding: 0;
+}
+
+.info-section .accordion-item {
+  margin-bottom: 10px;
+}
+
+.info-section .accordion-header {
+  cursor: pointer;
+  background: #6a0dad;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.info-section .accordion-header:hover {
+  background: #4b0082;
+}
+
+.info-section .accordion-header::after {
+  content: "▼"; /* Adiciona a seta padrão */
+  font-size: 20px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.info-section .accordion-header.active::after {
+  transform: rotate(180deg); /* Inverte a seta ao expandir */
+}
+
+.info-section .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  padding: 0 10px;
+  border-left: 3px solid #6a0dad;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.info-section .accordion-content.open {
+  max-height: 300px; /* Altura suficiente para o texto expandido */
+  padding: 10px;
+}
+
+.info-section p {
+  margin: 5px 0;
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 .home-container {
@@ -50,7 +126,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  margin: 10px;
 }
 
 .start-button:hover {
@@ -58,10 +134,16 @@ body {
 }
 
 
+/* Estilo do Menu para Desktop */
 .menu {
   background: #6a0dad;
   padding: 12px;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .menu ul {
@@ -85,6 +167,15 @@ body {
   background: #4b0082;
   border-radius: 5px;
   border-bottom: 3px solid white;
+}
+
+/* Estilo do Menu Responsivo */
+.menu-toggle {
+  display: none; /* Escondido por padrão no desktop */
+}
+
+.menu ul {
+  flex-direction: row; /* Mantém como lista horizontal no desktop */
 }
 
 
@@ -215,15 +306,15 @@ button:hover {
 
 .footer {
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   background: linear-gradient(90deg, #6a11cb, #8e44ad);
   color: white;
   text-align: center;
   font-size: 14px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  margin-top: 50px;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .footer a {
@@ -238,9 +329,78 @@ button:hover {
 
 
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .App {
-    max-width: 90%;
-    padding: 20px;
+    max-width: 100%;
+    padding: 15px;
+    margin: 20px;
+  }
+
+  
+  .info-section {
+    margin: 20px 0;
+    position: relative; /* Para se ajustar ao fluxo natural no celular */
+  }
+  
+  .resultado {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  label,
+  input,
+  button {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 auto;
+    position: 0 auto;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6a0dad;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 2px;
+    display: none;
+    width: 100%;
+    padding: 0 auto;
+  }
+
+  .menu ul.show {
+    display: flex; /* Exibe o menu quando ativado */
+  }
+
+  .menu li {
+    padding: 8px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu li:hover {
+    background: #4b0082;
+    border-radius: 0; /* Remove o arredondamento no hover */
   }
 }
